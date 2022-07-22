@@ -1,0 +1,23 @@
+<% include partials/_header %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3 card">
+      <div class="card-body">
+        <form action="/kategori/update/<%= kategori.id_kat %>" method="POST">
+            <div class="form-group">
+                <input disabled type="text" name="id_kat" value="<%= kategori.id_kat%>" placeholder="id_kat" class="form-control" autofocus>
+              </div>
+          <div class="form-group">
+            <input type="text" name="kategori" value="<%= kategori.kategori%>" placeholder="kategori" class="form-control" autofocus>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            save kategori
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include partials/_footer %>

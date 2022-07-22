@@ -15,6 +15,7 @@
         <thead>
           <tr>
             <td>no</td>
+            <td>id kategori</td>
             <td>kategori</td>
             <td>Actions</td>
           </tr>
@@ -24,6 +25,7 @@
             <% for(var i = 0; i < kategori.length; i++) { %>
               <tr>
                 <td><%= (i + 1) %></td>
+                <td><%= kategori[i].id_kat  %> </td>
                 <td><%= kategori[i].kategori %></td>
                 <td>
                   <a href="/kategori/update/<%= kategori[i].id_kat %>" class="btn btn-info">Edit</a>
@@ -39,7 +41,7 @@
     <div class="col-md-5 border">
       <div class="card-body m-2">
 
-        <form action="/kategori/add" method="POST">
+        <form action="/kategori/create" method="POST">
           <div class="form-group">
             <input type="text" name="kategori" placeholder="kategori" class="form-control" autofocus>
           </div>
@@ -49,7 +51,6 @@
           <div class="form-group">
             <input type="text" name="kategori" placeholder="kategori" class="form-control">
           </div> -->
-
           <button type="submit" class="btn btn-primary">
             save kategori
           </button>
