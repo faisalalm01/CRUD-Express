@@ -3,6 +3,7 @@ const kategoriControllers = require('../controllers/kategoriControllers')
 const bookControllers = require('../controllers/bookControllers');
 
 
+// router.get('/', bookControllers.getKategori);
 router.get('/', bookControllers.findAll );
 router.post('/add', bookControllers.create);
 router.get('/update/:id', bookControllers.edit);

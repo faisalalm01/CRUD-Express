@@ -1,17 +1,37 @@
 <% include partials/_header %> 
 
-<div class="card border">
-    <div class="card-body">
-        <h1>
-            Kategori
-        </h1>
-    </div>
-</div>
 
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-7 border">
-      <table class="table table-bordered table-hover">
+
+    <p>
+      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Add Data kategori
+      </button>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <form action="/kategori/create" method="POST">
+          <!-- <div class="form-group">
+            <input type="text" name="kategori" placeholder="kategori" class="form-control" autofocus>
+          </div> -->
+          <div class="form-floating mb-3">
+            <input type="text" name="id_kat" class="form-control" id="floatingInput" placeholder="id_kat">
+            <label for="floatingInput">ID Kategori</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" name="kategori" class="form-control" id="floatingInput" placeholder="kategori">
+            <label for="floatingInput">Kategori</label>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            save kategori
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-12 border">
+      <table class="table table-dark table-striped table-hover">
         <thead>
           <tr>
             <td>no</td>
@@ -38,25 +58,20 @@
       </table>
     </div>
 
-    <div class="col-md-5 border">
+    <!-- <div class="col-md-5 border">
       <div class="card-body m-2">
 
         <form action="/kategori/create" method="POST">
           <div class="form-group">
             <input type="text" name="kategori" placeholder="kategori" class="form-control" autofocus>
           </div>
-          <!-- <div class="form-group">
-            <input type="text" name="harga" placeholder="harga" class="form-control">
-          </div>
-          <div class="form-group">
-            <input type="text" name="kategori" placeholder="kategori" class="form-control">
-          </div> -->
           <button type="submit" class="btn btn-primary">
             save kategori
           </button>
         </form>
       </div>
-    </div>
+    </div> -->
+
   </div>
 </div>
 

@@ -5,19 +5,20 @@ const express = require('express'),
       myConnection = require('express-myconnection');
 
 const app = express();
-const handlebars = require('express-handlebars');
+const { engine } = require ('express-handlebars');
 
 // importing routes
 const customerRoutes = require('./routes/index');
 
 // settings
+// app.engine('handlebars', handlebars({ defaultLayout: 'main' }));
+// app.set('view engine', 'handlebars');
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set("views", "views");
 app.set('port', process.env.PORT || 2828);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-// app.set('view engine', 'hbs');
-// app.engine('hbs', handlebars({
-//   layoutsDir: `${__dirname}/views`
-// }))
+// app.set('view engine', 'ejs');
 
 // middlewares
 app.use(morgan('dev'));
