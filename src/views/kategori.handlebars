@@ -1,5 +1,3 @@
-<% include partials/_header %> 
-
 
 <div class="container mt-5">
   <div class="row">
@@ -41,38 +39,20 @@
           </tr>
         </thead>
         <tbody>
-          <% if (kategori) { %>
-            <% for(var i = 0; i < kategori.length; i++) { %>
-              <tr>
-                <td><%= (i + 1) %></td>
-                <td><%= kategori[i].id_kat  %> </td>
-                <td><%= kategori[i].kategori %></td>
-                <td>
-                  <a href="/kategori/update/<%= kategori[i].id_kat %>" class="btn btn-info">Edit</a>
-                  <a href="/kategori/delete/<%= kategori[i].id_kat %>" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-            <% } %>
-          <% } %>
+          {{#each kategori}}
+             <tr>
+              <td>{{1}}</td>
+              <td>{{id_kat}}</td>
+              <td>{{kategori}}</td>
+              <td>
+                <a href="/kategori/update/{{id_kat}}" class="btn btn-info">Edit</a>
+                <a href="/kategori/delete/{{id_kat}}" class="btn btn-danger">Delete</a>
+              </td>
+             </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
 
-    <!-- <div class="col-md-5 border">
-      <div class="card-body m-2">
-
-        <form action="/kategori/create" method="POST">
-          <div class="form-group">
-            <input type="text" name="kategori" placeholder="kategori" class="form-control" autofocus>
-          </div>
-          <button type="submit" class="btn btn-primary">
-            save kategori
-          </button>
-        </form>
-      </div>
-    </div> -->
-
   </div>
 </div>
-
-<% include partials/_footer %>
